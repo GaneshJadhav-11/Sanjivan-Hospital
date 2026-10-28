@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sanjivan Hospital | OPD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+</head>
+
+<body>
+    <header><a class="brand" href="index.html"><span class="brand-mark">✚</span><span>Sanjivan
+                <em>Hospital</em></span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">OPD Registration</a>
+            <a href="status.html">Check Status</a>
+            <a href="doctor.html">Doctor Portal</a>
+            <a href="admin.html">Admin Portal</a>
+            <div style="display:inline-block; margin-left: 15px;"><label
+                    style="font-weight:600; font-size:14px; margin-right:5px; color:inherit;">Language:</label><select
+                    class="global-lang-selector"
+                    style="padding: 4px; border-radius: 4px; font-weight:600; border: 1px solid #ccc; font-family:inherit; background:transparent; color:inherit;">
+                    <option value="en" style="color:#333;">English</option>
+                    <option value="hi" style="color:#333;">हिंदी (Hindi)</option>
+                    <option value="mr" style="color:#333;">मराठी (Marathi)</option>
+                </select></div>
+        </nav>
+        <a class="help" href="tel:112">Emergency? <b>112</b></a>
+        <button class="menu" aria-label="Open menu">☰</button>
+    </header>
+    <main>
+        <!-- HERO CAROUSEL -->
+        <section id="home" class="hero hero-carousel" aria-label="Hospital Photo Carousel" role="region">
+            <div class="carousel-container">
+                <!-- Slides (Strictly 5 Images in Exact Specified Order) -->
+                <div class="carousel-slides">
+                    <!-- Slide 1 — Hospital Building: Existing Sanjivan Hospital exterior/building image currently displayed on Home Page -->
+                    <div class="carousel-slide active" data-slide="0" aria-hidden="false">
+                        <img src="hero-new.png" alt="Sanjivan Hospital building exterior" class="slide-image">
+                        <!-- Clickable button hotspots for Slide 1 native graphic -->
+                        <div class="slide1-button-hotspots">
+                            <a href="register.html" class="slide1-hotspot hotspot-book" aria-label="Book OPD Appointment" title="Book OPD Appointment"></a>
+                            <a href="status.html" class="slide1-hotspot hotspot-status" aria-label="Check OPD Status" title="Check OPD Status"></a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 — Hospital Reception: Hospital reception area image -->
+                    <div class="carousel-slide" data-slide="1" aria-hidden="true">
+                        <img src="hospital-reception.jpg" alt="Sanjivan Hospital Reception" class="slide-image">
+                    </div>
+
+                    <!-- Slide 3 — Patient Room: Hospital patient room image -->
+                    <div class="carousel-slide" data-slide="2" aria-hidden="true">
+                        <img src="patient-room.jpg" alt="Sanjivan Hospital Patient Room" class="slide-image">
+                    </div>
+
+                    <!-- Slide 4 — Doctor: Photograph of Dr. Sujit Sonawane -->
+                    <div class="carousel-slide slide-doctor" data-slide="3" aria-hidden="true">
+                        <img src="hospital-doctor.jpg" alt="Dr. Sujit Sonawane - Doctor at Sanjivan Hospital" class="slide-image slide-img-doctor">
+                    </div>
+
+                    <!-- Slide 5 — General Ward: Hospital general ward with multiple patient beds -->
+                    <div class="carousel-slide" data-slide="4" aria-hidden="true">
+                        <img src="hospital-general-ward.jpg" alt="Sanjivan Hospital General Ward" class="slide-image">
+                    </div>
+                </div>
+
+                <!-- Text & Buttons Overlay (Seamlessly presented across slides) -->
+                <div class="hero-overlay-content" id="heroOverlayContent">
+                    <p class="hero-eyebrow" data-i18n="— Trusted Care | Better Health | Healthier Tomorrow">— Trusted Care | Better Health | Healthier Tomorrow</p>
+                    <h1 class="hero-title"><span data-i18n="Care that starts">Care that starts</span> <span class="highlight" data-i18n="before you arrive.">before you arrive.</span></h1>
+                    <p class="hero-desc" data-i18n="Sanjivan Hospital is committed to providing quality healthcare with compassion, trust and care.">Sanjivan Hospital is committed to providing quality healthcare with compassion, trust and care.</p>
+                    <div class="hero-actions">
+                        <a href="register.html" class="hero-btn primary" id="heroBookOpdBtn">
+                            <span class="btn-icon">📅</span> <span data-i18n="Book OPD">Book OPD</span> <span>→</span>
+                        </a>
+                        <a href="status.html" class="hero-btn outline" id="heroCheckStatusBtn">
+                            <span class="btn-icon">🔍</span> <span data-i18n="Check OPD Status">Check OPD Status</span> <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Previous Arrow -->
+                <button type="button" class="carousel-nav-btn prev-btn" id="heroPrevBtn" aria-label="Previous slide" title="Previous slide">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Next Arrow -->
+                <button type="button" class="carousel-nav-btn next-btn" id="heroNextBtn" aria-label="Next slide" title="Next slide">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Navigation Dots (Exactly 5 Dots) -->
+                <div class="carousel-dots" role="tablist" aria-label="Hero carousel navigation">
+                    <button type="button" class="carousel-dot active" data-slide-to="0" role="tab" aria-selected="true" aria-label="Show hospital building image" title="Slide 1 — Hospital Building"></button>
+                    <button type="button" class="carousel-dot" data-slide-to="1" role="tab" aria-selected="false" aria-label="Show reception image" title="Slide 2 — Hospital Reception"></button>
+                    <button type="button" class="carousel-dot" data-slide-to="2" role="tab" aria-selected="false" aria-label="Show patient room image" title="Slide 3 — Patient Room"></button>
+                    <button type="button" class="carousel-dot" data-slide-to="3" role="tab" aria-selected="false" aria-label="Show doctor image" title="Slide 4 — Doctor"></button>
+                    <button type="button" class="carousel-dot" data-slide-to="4" role="tab" aria-selected="false" aria-label="Show general ward image" title="Slide 5 — General Ward"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="hospital-section bg-white">
+            <div class="container">
+                <div class="two-col align-center">
+                    <div class="col-text">
+                        <p class="eyebrow" data-i18n="ABOUT US">ABOUT US</p>
+                        <h2 class="section-title" data-i18n="About Sanjivan Hospital">About Sanjivan Hospital</h2>
+                        <p class="section-lead" data-i18n="about_desc">Sanjivan Hospital is committed to providing
+                            accessible, compassionate and patient-focused healthcare services for individuals and
+                            families in Yeola and nearby communities. Our focus is on delivering dependable medical
+                            consultation, attentive patient care and a comfortable healthcare experience.</p>
+                        <a href="#services" class="btn light mt-4" data-i18n="About Our Services">About Our Services</a>
+                    </div>
+                    <div class="col-img">
+                        <div class="about-grid">
+                            <div class="about-card"><i class="icon">⚕️</i>
+                                <h4 data-i18n="Expert Care">Expert Care</h4>
+                            </div>
+                            <div class="about-card"><i class="icon">🏥</i>
+                                <h4 data-i18n="Modern Facility">Modern Facility</h4>
+                            </div>
+                            <div class="about-card"><i class="icon">❤️</i>
+                                <h4 data-i18n="Patient First">Patient First</h4>
+                            </div>
+                            <div class="about-card"><i class="icon">👨‍⚕️</i>
+                                <h4 data-i18n="Qualified Doctor">Qualified Doctor</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCATION -->
+        <section id="location" class="hospital-section bg-light">
+            <div class="container">
+                <div class="two-col align-center">
+                    <div class="col-text">
+                        <p class="eyebrow" data-i18n="LOCATION">LOCATION</p>
+                        <h2 class="section-title" data-i18n="Find Sanjivan Hospital">Find Sanjivan Hospital</h2>
+                        <div class="location-card" style="margin: 0; text-align: left; max-width: 100%;">
+                            <div class="loc-icon" style="margin: 0 0 1.5rem 0;">📍</div>
+                            <h3 data-i18n="Sanjivan Hospital"
+                                style="color: var(--brand-navy); font-size: 1.5rem; margin-bottom: 0.5rem;">Sanjivan
+                                Hospital</h3>
+                            <p data-i18n="address_desc"
+                                style="color: var(--secondary-soft); line-height: 1.6; margin-bottom: 1rem;">Vinchur
+                                Road, Shree Ram Colony,<br>Yeola-423401, Maharashtra</p>
+                            <a href="https://maps.google.com/?q=Sanjivan+Hospital+Yeola" target="_blank"
+                                class="btn primary mt-4" data-i18n="Get Directions">Get Directions</a>
+                        </div>
+                    </div>
+                    <div class="col-map" style="width: 100%; height: 100%; min-height: 400px;">
+                        <iframe
+                            src="https://maps.google.com/maps?q=Sanjivan+Hospital,+Vinchur+Road,+Shree+Ram+Colony,+Yeola-423401,+Maharashtra&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="100%"
+                            style="border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow-rich); min-height: 450px;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCTOR -->
+        <section id="doctor" class="hospital-section bg-white">
+            <div class="container">
+                <p class="eyebrow center" data-i18n="OUR EXPERTISE">OUR EXPERTISE</p>
+                <h2 class="section-title center" data-i18n="Meet Our Doctor">Meet Our Doctor</h2>
+                <div class="doc-profile-container">
+                    <div class="doc-visual">
+                        <img src="doctor.jpg" alt="Dr. Sujit Sonawane" class="doc-photo">
+                        <div class="doc-badge" data-i18n="General Physician">General Physician</div>
+                    </div>
+                    <div class="doc-info">
+                        <h3 data-i18n="Dr. Sujit Sonawane">Dr. Sujit Sonawane</h3>
+                        <p class="doc-qual" data-i18n="MBBS">MBBS</p>
+                        <p class="doc-focus" data-i18n="Consulting Endocrinology / Endocrine-related care">Consulting
+                            Endocrinology / Endocrine-related care</p>
+
+                        <div class="doc-desc"
+                            data-i18n="Dr. Sujit Sonawane is a General Physician providing comprehensive medical consultation with a patient-focused approach. His areas of clinical focus include general family medicine and the management of common chronic conditions such as diabetes, hypertension and thyroid-related disorders.">
+                            Dr. Sujit Sonawane is a General Physician providing comprehensive medical consultation with
+                            a patient-focused approach. His areas of clinical focus include general family medicine and
+                            the management of common chronic conditions such as diabetes, hypertension and
+                            thyroid-related disorders.
+                        </div>
+
+                        <h4 class="areas-title" data-i18n="Areas of Care">Areas of Care</h4>
+                        <ul class="care-list">
+                            <li><i>✓</i> <span data-i18n="General Physician Consultation">General Physician
+                                    Consultation</span></li>
+                            <li><i>✓</i> <span data-i18n="Family Medicine">Family Medicine</span></li>
+                            <li><i>✓</i> <span data-i18n="Diabetes Management">Diabetes Management</span></li>
+                            <li><i>✓</i> <span data-i18n="Hypertension Management">Hypertension Management</span></li>
+                            <li><i>✓</i> <span data-i18n="Thyroid-related Care">Thyroid-related Care</span></li>
+                            <li><i>✓</i> <span data-i18n="Lifestyle & Chronic Disease Management">Lifestyle & Chronic
+                                    Disease Management</span></li>
+                        </ul>
+
+                        <a href="register.html" class="btn primary mt-4" data-i18n="Book OPD Appointment">Book OPD
+                            Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="hospital-section bg-light">
+            <div class="container center">
+                <p class="eyebrow" data-i18n="MEDICAL CARE">MEDICAL CARE</p>
+                <h2 class="section-title" data-i18n="Our Medical Services">Our Medical Services</h2>
+                <div class="grid-3">
+                    <div class="service-card">
+                        <i>🩺</i>
+                        <h3 data-i18n="General Physician Consultation">General Physician Consultation</h3>
+                        <p data-i18n="svc_desc_1">Professional medical consultation for common health concerns and
+                            routine medical needs.</p>
+                    </div>
+                    <div class="service-card">
+                        <i>🛡️</i>
+                        <h3 data-i18n="Preventive Healthcare">Preventive Healthcare</h3>
+                        <p data-i18n="svc_desc_2">Routine check-ups and health monitoring to maintain your well-being.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <i>👨‍👩‍👧‍👦</i>
+                        <h3 data-i18n="Family Healthcare">Family Healthcare</h3>
+                        <p data-i18n="svc_desc_3">Comprehensive primary care services for all members of the family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section id="why-us" class="hospital-section bg-rich">
+            <div class="container center">
+                <p class="eyebrow" data-i18n="ADVANTAGES">ADVANTAGES</p>
+                <h2 class="section-title" data-i18n="Why Choose Sanjivan Hospital?">Why Choose Sanjivan Hospital?</h2>
+                <div class="grid-4">
+                    <div class="feature-card">
+                        <i>🤝</i>
+                        <h4 data-i18n="Patient-Centred Care">Patient-Centred Care</h4>
+                        <p data-i18n="adv_desc_1">We prioritize your health and comfort.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i>📍</i>
+                        <h4 data-i18n="Convenient Access">Convenient Access</h4>
+                        <p data-i18n="adv_desc_2">Located centrally in Yeola for easy reach.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i>📱</i>
+                        <h4 data-i18n="Simple OPD Registration">Simple OPD Registration</h4>
+                        <p data-i18n="adv_desc_3">Book appointments online instantly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i>⏱️</i>
+                        <h4 data-i18n="Status Tracking">Status Tracking</h4>
+                        <p data-i18n="adv_desc_4">Check your queue status in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FACILITIES -->
+        <section id="facilities" class="hospital-section bg-light">
+            <div class="container center">
+                <p class="eyebrow" data-i18n="AMENITIES">AMENITIES</p>
+                <h2 class="section-title" data-i18n="Patient Facilities">Patient Facilities</h2>
+                <div class="grid-3">
+                    <div class="facility-card"><i>🏥</i>
+                        <h4 data-i18n="OPD Consultation Facility">OPD Consultation</h4>
+                    </div>
+                    <div class="facility-card"><i>📝</i>
+                        <h4 data-i18n="Digital Patient Registration">Digital Patient Registration</h4>
+                    </div>
+                    <div class="facility-card"><i>📱</i>
+                        <h4 data-i18n="Online Appointment Management">Online Appointment Management</h4>
+                    </div>
+                    <div class="facility-card"><i>🔔</i>
+                        <h4 data-i18n="Live Status Tracking">Live Status Tracking</h4>
+                    </div>
+                    <div class="facility-card"><i>💁</i>
+                        <h4 data-i18n="Reception & Help Desk">Reception & Help Desk</h4>
+                    </div>
+                    <div class="facility-card"><i>🛋️</i>
+                        <h4 data-i18n="Comfortable Waiting Area">Comfortable Waiting Area</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFRASTRUCTURE -->
+        <section id="infrastructure" class="hospital-section bg-white">
+            <div class="container center">
+                <p class="eyebrow" data-i18n="OUR SETUP">OUR SETUP</p>
+                <h2 class="section-title" data-i18n="Our Infrastructure">Our Infrastructure</h2>
+                <p class="section-lead" data-i18n="infra_desc">Designed to provide a safe, clean, and comfortable
+                    healing environment.</p>
+                <div class="infra-grid">
+                    <img src="hospital-building.jpg" class="infra-img" alt="Sanjivan Hospital Building">
+                    <div class="infra-list">
+                        <div class="infra-item"><i>🚪</i> <span data-i18n="Consultation Rooms">Consultation Rooms</span>
+                        </div>
+                        <div class="infra-item"><i>🛎️</i> <span data-i18n="Reception Area">Reception Area</span></div>
+                        <div class="infra-item"><i>🪑</i> <span data-i18n="Patient Waiting Area">Patient Waiting
+                                Area</span></div>
+                        <div class="infra-item"><i>✨</i> <span data-i18n="Clean Environment">Clean Environment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEEDBACK -->
+        <section id="feedback" class="hospital-section bg-light">
+            <div class="container center">
+                <p class="eyebrow" data-i18n="PATIENT EXPERIENCE">PATIENT EXPERIENCE</p>
+                <h2 class="section-title" data-i18n="Your healthcare experience matters to us.">Your healthcare
+                    experience matters to us.</h2>
+                <p class="section-lead" data-i18n="feed_desc">We continuously strive to improve our services based on
+                    patient feedback.</p>
+                <a href="#contact" class="btn primary mt-4" data-i18n="Share Your Feedback">Share Your Feedback</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="hospital-section bg-white">
+            <div class="container">
+                <p class="eyebrow center" data-i18n="HELP & SUPPORT">HELP & SUPPORT</p>
+                <h2 class="section-title center" data-i18n="Frequently Asked Questions">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary data-i18n="faq_q1">How can I register for an OPD appointment?</summary>
+                        <div class="faq-content" data-i18n="faq_a1">You can register online using our OPD Registration
+                            portal. Simply fill in your details and select your preferred date.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq_q2">How can I check my OPD registration status?</summary>
+                        <div class="faq-content" data-i18n="faq_a2">Use the 'Check Status' page and enter your Patient
+                            ID and Mobile Number to view your current queue status.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq_q3">Which doctor is available at Sanjivan Hospital?</summary>
+                        <div class="faq-content" data-i18n="faq_a3">Dr. Sujit Sonawane, our General Physician, is
+                            available for medical consultations.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq_q4">Where is Sanjivan Hospital located?</summary>
+                        <div class="faq-content" data-i18n="faq_a4">We are located at Vinchur Road, Shree Ram Colony,
+                            Yeola-423401, Maharashtra.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq_q5">What information is required for OPD registration?</summary>
+                        <div class="faq-content" data-i18n="faq_a5">You will need to provide your full name, mobile
+                            number, address, date of birth, and chief medical complaint.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- REQUEST CALL BACK -->
+        <section id="contact" class="hospital-section bg-primary">
+            <div class="container">
+                <div class="two-col align-start">
+                    <div class="col-text">
+                        <p class="eyebrow" data-i18n="CONTACT US">CONTACT US</p>
+                        <h2 class="section-title text-white" data-i18n="Need Assistance?">Need Assistance?</h2>
+                        <p class="section-lead text-white-muted" data-i18n="call_desc">Have a question about your appointment or hospital
+                            services? Leave your details and our team will get in touch with you.</p>
+                    </div>
+                    <div class="col-form">
+                        <div class="contact-card">
+                            <form id="callbackForm"
+                                onsubmit="event.preventDefault(); alert('Thank you. Our team will contact you shortly.'); this.reset();">
+                                <label><span data-i18n="Full Name *">Full Name *</span><input type="text" required
+                                        placeholder="Enter your full name"></label>
+                                <label><span data-i18n="Mobile Number *">Mobile Number *</span><input type="tel"
+                                        required pattern="[0-9]{10}" placeholder="10-digit mobile number"></label>
+                                <label><span data-i18n="Reason for Contact">Reason for Contact</span><textarea rows="3"
+                                        placeholder="How can we help you?"></textarea></label>
+                                <button type="submit" class="btn primary mt-4" data-i18n="Request a Call Back">Request a
+                                    Call Back</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="hospital-section bg-rich text-white center">
+            <div class="container">
+                <h2 class="section-title text-white" data-i18n="Ready to Visit Sanjivan Hospital?">Ready to Visit
+                    Sanjivan Hospital?</h2>
+                <p class="section-lead text-white-muted" data-i18n="cta_desc">Register for your OPD visit quickly and
+                    conveniently.</p>
+                <div class="actions center mt-4">
+                    <a href="register.html" class="btn light" data-i18n="Register for OPD">Register for OPD</a>
+                    <a href="status.html" class="btn light-outline" data-i18n="Check Status">Check Status</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="brand"><span class="brand-mark">✚</span><span>Sanjivan <em>Hospital</em></span></div>
+        <p>Sanjivan Hospital, Vinchur Road, Shree Ram Colony, Yeola-423401, Maharashtra · +91 11 4000 2000 ·
+            care@sanjivan.in</p>
+        <p>© 2026 Sanjivan Hospital. Privacy Policy · Terms of Use</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="carousel.js"></script>
+    <script src="i18n.js"></script>
+</body>
+
+</html>

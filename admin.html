@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjivan Hospital | Admin Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="premium.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <a class="brand" href="index.html">
+            <span class="brand-mark">✚</span>
+            <span>Sanjivan <em>Hospital</em></span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">OPD Registration</a>
+            <a href="status.html">Check Status</a>
+            <a href="doctor.html">Doctor Portal</a>
+            <a class="active" href="admin.html">Admin Portal</a>
+        <div style="display:inline-block; margin-left: 15px;"><label style="font-weight:600; font-size:14px; margin-right:5px; color:inherit;">Language:</label><select class="global-lang-selector" style="padding: 4px; border-radius: 4px; font-weight:600; border: 1px solid #ccc; font-family:inherit; background:transparent; color:inherit;"><option value="en" style="color:#333;">English</option><option value="hi" style="color:#333;">हिंदी (Hindi)</option><option value="mr" style="color:#333;">मराठी (Marathi)</option></select></div></nav>
+
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+
+    </header>
+
+
+    <!-- Login Section -->
+    <section id="loginSection" class="login-section">
+
+        <div class="login-card">
+
+            <div class="login-icon">🔐</div>
+
+            <p class="eyebrow">SANJIVAN ADMIN</p>
+
+            <h1>Admin Portal</h1>
+
+            <p class="login-description">
+                Login to access patient and doctor information.
+            </p>
+
+            <form id="loginForm">
+
+                <label>
+    Email address
+    <input
+        type="email"
+        id="username"
+        placeholder="Enter your username"
+        required
+    >
+</label>
+
+                <label>
+                    Password
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </label>
+
+                <button type="submit" class="login-btn">
+                    Login →
+                </button>
+
+            </form>
+
+            <p class="demo-info">
+                Demo Login: <b>admin@gmail.com</b> / <b>admin123</b>
+            </p>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Admin Dashboard -->
+    <main id="dashboard" class="dashboard hidden">
+
+        <div class="dashboard-header">
+
+            <div>
+                <p class="eyebrow">ADMIN DASHBOARD</p>
+
+                <h1>Hospital Overview</h1>
+
+                <p>
+                    View and manage today's doctors and patient registrations.
+                </p>
+            </div>
+
+            <div class="admin-badge">
+                👨‍💼 Administrator
+            </div>
+
+        </div>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">👨‍⚕️</div>
+                <div>
+                    <span>Total Doctors</span>
+                    <h2 id="doctorCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👤</div>
+                <div>
+                    <span>Total Patients</span>
+                    <h2 id="patientCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div>
+                    <span>Waiting Patients</span>
+                    <h2 id="waitingCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🎫</div>
+                <div>
+                    <span>In Progress</span>
+                    <h2 id="inProgressCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div>
+                    <span>Completed</span>
+                    <h2 id="completedCount">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Payments Section -->
+        <section class="admin-section" id="paymentsSection">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">MANUAL PAYMENT VERIFICATION</p>
+                    <h2>UPI Payments Verification</h2>
+                </div>
+                <span class="record-count" id="paymentRecordCount">0 Payments</span>
+            </div>
+            
+            <p style="color:var(--muted); font-size:0.9rem; margin-top:-10px; margin-bottom:15px;">
+                Verify submitted UPI UTR numbers against the hospital's PhonePe / bank statement before confirming appointments.
+            </p>
+
+            <!-- Payment Filter Buttons -->
+            <div class="payment-filters" style="display:flex; gap:8px; margin-bottom:15px; flex-wrap:wrap;">
+                <button type="button" class="filter-btn active" data-filter="ALL" onclick="filterPayments('ALL')">
+                    All (<span id="countAll">0</span>)
+                </button>
+                <button type="button" class="filter-btn" data-filter="PENDING_VERIFICATION" onclick="filterPayments('PENDING_VERIFICATION')">
+                    ⏳ Pending Verification (<span id="countPending">0</span>)
+                </button>
+                <button type="button" class="filter-btn" data-filter="VERIFIED" onclick="filterPayments('VERIFIED')">
+                    ✓ Verified (<span id="countVerified">0</span>)
+                </button>
+                <button type="button" class="filter-btn" data-filter="REJECTED" onclick="filterPayments('REJECTED')">
+                    ✕ Rejected (<span id="countRejected">0</span>)
+                </button>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pay ID</th>
+                            <th>Appt ID</th>
+                            <th>Patient Name</th>
+                            <th>Doctor</th>
+                            <th>OPD Date & Time</th>
+                            <th>Amount</th>
+                            <th>Transaction ID / UTR</th>
+                            <th>Submitted At</th>
+                            <th>Payment Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentTableBody">
+                        <tr><td colspan="10">Loading payments...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Doctors Section -->
+        <section class="admin-section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="eyebrow">DOCTOR MANAGEMENT</p>
+                    <h2>Doctors</h2>
+                </div>
+
+                <span class="record-count" id="doctorRecordCount">
+                    0 Doctors
+                </span>
+
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Doctor Name</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="doctorTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Patients Section -->
+        <section class="admin-section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="eyebrow">PATIENT MANAGEMENT</p>
+                    <h2>Registered Patients</h2>
+                </div>
+
+                <span class="record-count" id="patientRecordCount">
+                    0 Patients
+                </span>
+
+            </div>
+
+
+            <!-- Search -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchPatient"
+                    placeholder="Search by patient name or patient ID">
+
+                <button id="refreshBtn">
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Token</th>
+                            <th>Time</th>
+                            <th>Patient Name</th>
+                            <th>Patient ID</th>
+                            <th>Mobile</th>
+                            <th>Department</th>
+                            <th>Doctor</th>
+                            <th>OPD Date</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="patientTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Patient Details -->
+        <section id="patientDetails" class="patient-details hidden">
+
+            <div class="details-card">
+
+                <div class="details-header">
+
+                    <div>
+                        <p class="eyebrow">PATIENT INFORMATION</p>
+                        <h2>Patient Details</h2>
+                    </div>
+
+                    <button id="closeDetails">✕</button>
+
+                </div>
+
+                <div id="detailsContent"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Payment Verification Modal / Details Card -->
+        <section id="paymentDetailsModal" class="patient-details hidden">
+            <div class="details-card" style="border: 2px solid var(--primary);">
+                <div class="details-header">
+                    <div>
+                        <p class="eyebrow" style="color:var(--primary-deep);">TRANSACTION VERIFICATION</p>
+                        <h2>Payment Details & Bank Verification</h2>
+                    </div>
+                    <button id="closePaymentDetails" onclick="closePaymentModal()">✕</button>
+                </div>
+                <div id="paymentDetailsContent"></div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="brand">
+            <span class="brand-mark">✚</span>
+            <span>Sanjivan <em>Hospital</em></span>
+        </div>
+
+        <p>
+            Admin Portal · Sanjivan Hospital
+        </p>
+
+        <p>
+            © 2026 Sanjivan Hospital
+        </p>
+
+    </footer>
+
+
+    <script src="admin.js"></script>
+<script src="i18n.js"></script>
+</body>
+
+</html>

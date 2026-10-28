@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sanjivan Hospital | OPD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+</head>
+
+<body>
+    <header><a class="brand" href="index.html"><span class="brand-mark">✚</span><span>Sanjivan <em>Hospital</em></span></a>
+        <nav><a href="index.html">Home</a><a href="register.html">OPD Registration</a><a href="status.html">Check Status</a><a
+                href="doctor.html">Doctor Portal</a><a href="admin.html">Admin Portal</a><div style="display:inline-block; margin-left: 15px;"><label style="font-weight:600; font-size:14px; margin-right:5px; color:inherit;">Language:</label><select class="global-lang-selector" style="padding: 4px; border-radius: 4px; font-weight:600; border: 1px solid #ccc; font-family:inherit; background:transparent; color:inherit;"><option value="en" style="color:#333;">English</option><option value="hi" style="color:#333;">हिंदी (Hindi)</option><option value="mr" style="color:#333;">मराठी (Marathi)</option></select></div></nav><a class="help" href="tel:112">Emergency? <b>112</b></a><button
+            class="menu" aria-label="Open menu">☰</button>
+    </header>
+    <main>
+
+        <section id="register" class="registration">
+            <div class="section-intro">
+                <p class="eyebrow">PATIENT REGISTRATION</p>
+                <h2>Book your OPD visit</h2>
+                <p>Tell us a little about yourself. It should take about 3 minutes.</p>
+            </div>
+            <div class="form-shell">
+                <div class="steps">
+                    <div class="step active"><b>1</b><span>Personal<br>details</span></div>
+                    <div class="line"></div>
+                    <div class="step"><b>2</b><span>OPD<br>details</span></div>
+                    <div class="line"></div>
+                    <div class="step"><b>3</b><span>Medical<br>information</span></div>
+                    <div class="line"></div>
+                    <div class="step"><b>4</b><span>Review</span></div>
+                    <div class="line"></div>
+                    <div class="step"><b>5</b><span>Payment</span></div>
+                </div>
+                <form id="opdForm">
+                    <div class="form-page active" data-page="1">
+                        <h3>Personal details</h3>
+                        <p class="hint">Fields marked with * are required.</p>
+                        <div class="grid"><label class="wide">Full name *<input name="name" required
+                                    placeholder="Enter your full name"></label><label>Date of birth *<input name="dob"
+                                    type="date" required></label><label>Gender *<select name="gender" required>
+                                    <option value="">Select</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                    <option>Prefer not to say</option>
+                                </select></label><label>Mobile number *<input name="phone" required
+                                    pattern="[6-9][0-9]{9}" placeholder="10-digit mobile number"></label><label>Email
+                                address<input name="email" type="email" placeholder="name@example.com"></label><label
+                                class="wide">Address *<input name="address" required
+                                    placeholder="House / street / locality"></label><label>City *<input name="city"
+                                    required placeholder="Your city"></label><label>PIN code *<input name="pin" required
+                                    pattern="[0-9]{6}" placeholder="6-digit PIN"></label></div>
+                    </div>
+                    <div class="form-page" data-page="2">
+                        <h3>OPD details</h3>
+                        <p class="hint">Choose the right specialty for your visit.</p>
+                        <div class="grid"><label>Patient type *<select name="patientType" required>
+                                    <option>New Patient</option>
+                                    <option>Existing Patient</option>
+                                </select></label><label>Preferred OPD date *<input name="date" type="date"
+                                    required></label><label>Department *<select name="department" id="department"
+                                    required>
+                                    <option value="">Select department</option>
+                                    <option>General Physician</option>
+                                </select></label><label>Doctor *<select name="doctor" id="doctor" required>
+                                    <option value="">Select department first</option>
+                                </select></label><label class="wide">Chief complaint *<textarea name="complaint"
+                                    required placeholder="Briefly describe why you need to visit"></textarea></label>
+                        </div>
+                    </div>
+                    <div class="form-page" data-page="3">
+                        <h3>Basic medical information</h3>
+                        <div class="notice">ⓘ Please do not upload sensitive documents that are not required for your
+                            consultation.</div>
+                        <div class="grid"><label>Existing medical conditions<textarea name="conditions"
+                                    placeholder="e.g. diabetes, asthma (optional)"></textarea></label><label>Current
+                                medications<textarea name="medications"
+                                    placeholder="List medications, if any"></textarea></label><label>Drug
+                                allergies<textarea name="allergies"
+                                    placeholder="List allergies, if any"></textarea></label><label>Previous
+                                surgeries<textarea name="surgeries"
+                                    placeholder="List surgeries, if any"></textarea></label></div>
+                    </div>
+                    <div class="form-page" data-page="4">
+                        <h3>Review your registration</h3>
+                        <div id="review" class="review"></div><label class="check"><input type="checkbox" id="confirm"
+                                required> I confirm that the information provided is correct.</label><label
+                            class="check"><input type="checkbox" required> I agree to the hospital's privacy
+                            policy.</label>
+                    </div>
+                    <div class="form-page" data-page="5">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                            <h3 style="margin: 0;">Hospital UPI QR Payment</h3>
+                            <span style="background: var(--primary-soft, #e6fffa); color: var(--primary-deep); font-weight: 800; font-size: 1.3rem; padding: 4px 14px; border-radius: 999px; border: 1px solid var(--primary);">₹200 Fee</span>
+                        </div>
+                        <p class="hint" style="margin-top:0.25rem;">Scan the official hospital QR code below with any UPI application to complete your appointment booking.</p>
+                        
+                        <!-- Appointment Summary Card -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                            <div style="font-weight: 700; color: var(--secondary); font-size: 0.95rem; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; display: flex; justify-content: space-between;">
+                                <span>🏥 Sanjivan Hospital — OPD Booking Summary</span>
+                                <span style="color: var(--primary); font-weight: 700;">₹200</span>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; font-size: 0.9rem;">
+                                <div><small style="color: var(--muted); display: block;">Patient Name</small><strong id="summaryPatientName" style="color: var(--ink);">-</strong></div>
+                                <div><small style="color: var(--muted); display: block;">Doctor / Department</small><strong id="summaryDoctorInfo" style="color: var(--ink);">-</strong></div>
+                                <div><small style="color: var(--muted); display: block;">Appointment Date</small><strong id="summaryDate" style="color: var(--ink);">-</strong></div>
+                                <div><small style="color: var(--muted); display: block;">Consultation Fee</small><strong style="color: var(--primary-deep); font-size: 1rem;">₹200</strong></div>
+                            </div>
+                        </div>
+
+                        <!-- Instructions & Official QR Code Container -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; align-items: start; margin-bottom: 20px;">
+                            
+                            <!-- Official QR Code Box -->
+                            <div style="background: #ffffff; border: 2px solid var(--primary); border-radius: 14px; padding: 18px; text-align: center; box-shadow: 0 4px 16px rgba(15, 156, 163, 0.08);">
+                                <div style="font-size: 0.85rem; font-weight: 800; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Official Hospital UPI QR Code</div>
+                                
+                                <div id="qrCodeContainer" style="background: #fff; padding: 8px; border-radius: 8px; display: inline-block; max-width: 100%;">
+                                    <img id="hospitalQrImage" src="hospital-qr.jpg" alt="Sanjivan Hospital Official PhonePe UPI QR Code" style="max-width: 230px; width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0; display: block; margin: 0 auto;" onerror="handleQrError(this)">
+                                </div>
+                                <div id="qrFallbackNotice" class="notice hidden" style="background:#fee2e2; color:#b91c1c; border:1px solid #fca5a5; margin-top:8px; font-size:0.85rem;">
+                                    Hospital QR code image not found. Please contact hospital reception or administrator to configure the official QR image.
+                                </div>
+                                
+                                <p style="font-size: 0.85rem; color: var(--muted); margin: 8px 0 0 0; font-weight: 600;">
+                                    Accepted via PhonePe, GPay, Paytm, BHIM & all UPI apps
+                                </p>
+                            </div>
+
+                            <!-- Payment Instructions -->
+                            <div style="background: #f1f8f8; border: 1px solid #cce8e7; border-radius: 14px; padding: 18px;">
+                                <h4 style="margin: 0 0 10px 0; color: var(--secondary); font-size: 1rem; display: flex; align-items: center; gap: 6px;">
+                                    <span>📋</span> Payment Instructions
+                                </h4>
+                                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--ink); margin-bottom: 10px;">
+                                    Please scan the hospital's official UPI QR Code and pay exactly <b>₹200</b> using your UPI application. After completing the payment, enter your transaction reference number or UTR below. Your appointment will be confirmed only after the hospital administrator verifies that the payment has actually been received.
+                                </p>
+                                <ol style="margin: 0; padding-left: 20px; font-size: 0.82rem; line-height: 1.5; color: var(--secondary-soft);">
+                                    <li>Open your UPI application (PhonePe, GPay, Paytm, etc.).</li>
+                                    <li>Scan the hospital's official QR Code.</li>
+                                    <li>Pay <b>₹200</b>.</li>
+                                    <li>Wait for the UPI application to show the transaction result.</li>
+                                    <li>Copy the transaction reference number or UTR.</li>
+                                    <li>Return to this page.</li>
+                                    <li>Enter and submit the transaction details below.</li>
+                                    <li>Wait for administrator verification.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- UTR & Screenshot Submission Fields -->
+                        <div style="background: #ffffff; border: 1px solid #dfeae8; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
+                            <h4 style="margin-top: 0; margin-bottom: 12px; color: var(--secondary);">Enter Payment Transaction Details</h4>
+                            
+                            <div class="grid">
+                                <label class="wide" style="font-weight: 600; color: var(--ink);">
+                                    UPI Transaction ID / UTR Number *
+                                    <input type="text" id="upiTransactionId" name="upiTransactionId" required placeholder="e.g. 429182749102 or T241028123456" pattern="[A-Za-z0-9_-]{6,50}" title="Please enter a valid alphanumeric transaction reference (6 to 50 characters)" autocomplete="off">
+                                    <small style="color: var(--muted); font-size: 0.8rem; font-weight: normal; margin-top: 4px; display: block;">
+                                        Found in your UPI payment receipt details (usually a 12-digit number or alphanumeric reference).
+                                    </small>
+                                </label>
+
+                                <label class="wide" style="font-weight: 600; color: var(--ink);">
+                                    Payment Screenshot (Optional)
+                                    <input type="file" id="upiScreenshot" name="upiScreenshot" accept="image/png, image/jpeg, image/jpg, image/webp" onchange="previewScreenshot(this)">
+                                    <small style="color: var(--muted); font-size: 0.8rem; font-weight: normal; margin-top: 4px; display: block;">
+                                        Upload screenshot of successful payment as supporting proof (PNG, JPG, max 5MB).
+                                    </small>
+                                    <div id="screenshotPreviewContainer" class="hidden" style="margin-top: 8px;">
+                                        <img id="screenshotPreview" style="max-height: 120px; border-radius: 6px; border: 1px solid #ccc;">
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div style="background: #eef8f6; border-left: 4px solid var(--primary); padding: 10px 14px; border-radius: 4px; margin-top: 12px; font-size: 0.82rem; color: var(--secondary);">
+                                🔒 <b>Security Note:</b> We will <b>NEVER</b> ask for your UPI PIN, OTP, bank password, or card CVV.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-controls">
+                        <button type="button" class="back btn light" id="back" style="visibility: hidden;">← Back</button>
+                        <button type="button" class="next btn primary" id="next">Continue →</button>
+                        <button type="submit" class="submit btn primary" id="submitBtn" style="display: none;">Submit Payment Details (₹200) →</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section id="success" class="success hidden">
+            <div class="success-icon" style="background: var(--warning); color: #fff; font-size: 2rem;">⏳</div>
+            <p class="eyebrow" style="color: #b45309;">PAYMENT VERIFICATION PENDING</p>
+            <h2>Payment Details Submitted</h2>
+            <p style="max-width: 650px; margin: 0 auto 1.5rem auto; line-height: 1.6; color: var(--secondary);">
+                Your payment details have been submitted successfully. Your payment is awaiting verification by the hospital administrator. Your appointment will be confirmed only after successful verification.
+            </p>
+            <div id="slip" class="slip"></div>
+            <div class="actions center" style="margin-top: 2rem; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn light" onclick="window.print()">Print Acknowledgement</button>
+                <a class="btn primary" href="status.html">Track Status on Patient Portal →</a>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="brand"><span class="brand-mark">✚</span><span>Sanjivan <em>Hospital</em></span></div>
+        <p>Sanjivan Hospital, Vinchur Road, Shree Ram Colony, Yeola-423401, Maharashtra · +91 11 4000 2000 · care@sanjivan.in</p>
+        <p>© 2026 Sanjivan Hospital. Privacy Policy · Terms of Use</p>
+    </footer>
+    <script src="script.js"></script>
+<script src="i18n.js"></script>
+</body>
+
+</html>

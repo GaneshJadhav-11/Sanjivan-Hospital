@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sanjivan Hospital | OPD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+</head>
+
+<body>
+    <header><a class="brand" href="index.html"><span class="brand-mark">✚</span><span>Sanjivan <em>Hospital</em></span></a>
+        <nav><a href="index.html">Home</a><a href="register.html">OPD Registration</a><a href="status.html">Check Status</a><a
+                href="doctor.html">Doctor Portal</a><a href="admin.html">Admin Portal</a><div style="display:inline-block; margin-left: 15px;"><label style="font-weight:600; font-size:14px; margin-right:5px; color:inherit;">Language:</label><select class="global-lang-selector" style="padding: 4px; border-radius: 4px; font-weight:600; border: 1px solid #ccc; font-family:inherit; background:transparent; color:inherit;"><option value="en" style="color:#333;">English</option><option value="hi" style="color:#333;">हिंदी (Hindi)</option><option value="mr" style="color:#333;">मराठी (Marathi)</option></select></div></nav><a class="help" href="tel:112">Emergency? <b>112</b></a><button
+            class="menu" aria-label="Open menu">☰</button>
+    </header>
+    <main>
+
+        <section id="status" class="status">
+            <div>
+                <p class="eyebrow">TRACK YOUR VISIT</p>
+                <h2>Check registration status</h2>
+                <p>Enter your patient ID and mobile number to view your OPD queue.</p>
+            </div>
+            <form id="statusForm"><label>Patient ID<input id="statusId" placeholder="PAT-2026-000001"
+                        required></label><label>Mobile number<input id="statusPhone"
+                        placeholder="10-digit mobile number" required></label><button class="btn primary">Check status
+                    →</button></form>
+            <div id="statusResult"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="brand"><span class="brand-mark">✚</span><span>Sanjivan <em>Hospital</em></span></div>
+        <p>Sanjivan Hospital, Vinchur Road, Shree Ram Colony, Yeola-423401, Maharashtra · +91 11 4000 2000 · care@sanjivan.in</p>
+        <p>© 2026 Sanjivan Hospital. Privacy Policy · Terms of Use</p>
+    </footer>
+    <script src="script.js"></script>
+<script src="i18n.js"></script>
+</body>
+
+</html>

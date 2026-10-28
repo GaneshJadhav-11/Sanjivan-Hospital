@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Database & Sensitive User Data
+hospital.db
+hospital.db-journal
+*.sqlite
+*.db
+uploads/
+
+# Presentations & Temporary Artifacts
+*.pptx
+*.pdf
+scratch/
+
+# Temporary development & scratch scripts
+*.py
+*.ps1
+rewrite_*.js
+update_*.js
+test_*.js
+check_*.js
+add_*.js
+append*.js
+create_*.js
+modify.js
+del.js
+db_test.js
+hero_replace.js
+inject_premium.js
+override_rich.js
+search_*.js
+presentation.html
+doctor_update.js
+fix_mobile_hero.js
+
+# OS metadata
+.DS_Store
+Thumbs.db
